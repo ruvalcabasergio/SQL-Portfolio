@@ -1,0 +1,24 @@
+--List of items
+
+/** item list
+Shorts (20) $20
+Shirts (17) $17
+Shoes (7) $30
+Socks (8) $7
+Bracelet (9) $5
+**/
+
+--Create a clothing store database
+
+CREATE TABLE store_items (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price_usd INTEGER);
+
+INSERT INTO store_items VALUES (1, "Shorts", 20, 20);
+INSERT INTO store_items VALUES (2, "Shirts", 17, 17);
+INSERT INTO store_items VALUES (3, "Shoes", 7, 30);
+INSERT INTO store_items VALUES (4, "socks", 8, 7);
+INSERT INTO store_items VALUES (5, "Bracelet", 9, 5);
+SELECT * FROM store_items;
+
+--Display the database ordered by price in usd
+
+SELECT * FROM store_items ORDER BY price_usd
