@@ -1,4 +1,4 @@
-/* Create table about the people and what they do here */
+-- Created two tables one containing name of famous people and another containing movies or songs they have been part of.
 
 CREATE TABLE famous_people (id INTEGER PRIMARY KEY,
     first_name TEXT,
@@ -37,6 +37,8 @@ INSERT INTO movies_or_songs (artist_name, song_movie_name)
 VALUES ("Emma Watson", "The Perks of Being a Wallflower");
 INSERT INTO movies_or_songs (artist_name, song_movie_name)
 VALUES ("Emma Watson", "Harry Potter");
+
+--Joined both tables using a common attribute and also ordered them by ascending order
 
 SELECT famous_people.first_name AS NAME, movies_or_songs.song_movie_name AS WORKS
 FROM famous_people
