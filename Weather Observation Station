@@ -1,0 +1,22 @@
+/*
+Queried a list of cities and states from the 'STATION' ordered by state in ascending order.
+*/
+SELECT CITY, STATE FROM STATION
+ORDER BY STATE ASC;
+
+/*
+Queried a list of city names from the 'STATION' table where cities had an even 'ID' number.
+Any duplicates were removed and output was ordered by city in descending order
+*/
+
+SELECT distinct (CITY) FROM STATION
+WHERE mod(ID,2) = 0
+ORDER BY CITY DESC;
+
+/*
+Queried the difference between the total number of city entries in the 'STATION' table
+and the number of single city records in the 'STATION' table labeled as 'TOTAL_DIFFERENCE'.
+*/
+
+SELECT COUNT(CITY) - COUNT(distinct CITY) FROM STATION AS TOTAL_DIFFERENCE
+
