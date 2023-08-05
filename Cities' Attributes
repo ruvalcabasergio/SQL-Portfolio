@@ -1,0 +1,47 @@
+/*
+Selected all attributes for every row from the 'CITY' table.
+*/
+
+SELECT * FROM CITY;
+
+/*
+Selected all attributes in a city with ID 1661 from the 'CITY' table.
+*/
+
+SELECT * FROM CITY
+WHERE ID = 1661;
+
+/*
+Created a query that selected all American cities from 'CITY' table with a population larger than 100000
+*/
+
+SELECT * FROM CITY
+WHERE COUNTRYCODE = 'USA'
+AND POPULATION > 100000;
+
+/*
+Created a query that listed the names from all American cities from the
+'CITY' table with population larger than 120000 in ascending order.
+*/
+
+SELECT NAME FROM CITY
+WHERE COUNTRYCODE = 'USA' AND POPULATION > 120000
+ORDER BY NAME ASC;
+
+/*
+Selected all attributes for every Japanese city from the 'CITY' table ordered by population in ascending order.
+*/
+
+SELECT * FROM CITY
+WHERE COUNTRYCODE = 'JPN'
+ORDER BY POPULATION ASC;
+
+/*
+Selected the names of all the Japanese cities from the 'CITY' table ordered by city names in ascending order.
+*/
+
+SELECT NAME FROM CITY
+WHERE COUNTRYCODE = 'JPN'
+ORDER BY NAME ASC;
+
+
