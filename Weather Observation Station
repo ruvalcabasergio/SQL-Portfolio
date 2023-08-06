@@ -20,3 +20,80 @@ and the number of single city records in the 'STATION' table labeled as 'TOTAL_D
 
 SELECT COUNT(CITY) - COUNT(distinct CITY) FROM STATION AS TOTAL_DIFFERENCE
 
+/*
+Queried the two cities from the 'STATION' table with the shortest and longest names including their
+total character count ordered alphabetically.
+*/
+
+SELECT CITY,LENGTH(CITY) FROM STATION 
+ORDER BY Length(CITY) ASC, CITY limit 1;
+
+SELECT CITY,LENGTH(CITY) FROM STATION 
+ORDER BY Length(CITY) DESC, CITY limit 1; 
+
+/*
+Queried a list of city names starting with vowels from the 'STATION' table
+listed in alphabetical order.
+*/
+
+SELECT CITY FROM STATION
+WHERE CITY REGEXP '^[A,E,I,O,U]'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of city names ending with vowels from the 'STATION' table
+where any duplicates were removed and outputs were listed in alphabetical order.
+*/
+
+SELECT distinct (CITY) FROM STATION
+WHERE CITY REGEXP '[A,E,I,O,U]$'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of cities that both ended and started with a vowel from the 'STATION'
+where any duplicates were removed and outputs were listed in alphabetical order.
+*/
+SELECT distinct(CITY)
+FROM STATION
+WHERE CITY REGEXP '^[A,E,I,O,U].*[A,E,I,O,U]$'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of cities where cities did not began with a vowel from the 'STATION' table
+any duplicates were removed and outputs were listed in alphabetical order.
+*/
+SELECT distinct(CITY)
+FROM STATION 
+WHERE CITY REGEXP '^[^A,E,I,O,U].*'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of cities where the cities did not end with a vowel from the 'STATION' table
+removed any duplicates from the list and listed outputs in alphabetical order.
+*/
+SELECT distinct(CITY)
+FROM STATION
+WHERE CITY REGEXP '.*[^A,E,I,O,U]$'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of cities where the cities either did not began or did not end with a vowel
+from the 'STATION' table removed any duplicates from the list and listed outputs in alphabetical order.
+*/
+SELECT distinct(CITY)
+FROM STATION
+WHERE CITY REGEXP '^[^A,E,I,O,U]|[^A,E,I,O,U]$'
+ORDER BY CITY ASC;
+
+/*
+Queried a list of cities where the cities both did not began or end with a vowel from the 'STATION' table
+removed any duplicates from the list and listed outputs in alphabetical order.
+*/
+SELECT distinct(CITY)
+FROM STATION
+WHERE CITY REGEXP '^[^A,E,I,O,U].*[^A,E,I,O,U]$'
+ORDER BY CITY ASC;
+
+
+
+
