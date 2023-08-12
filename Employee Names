@@ -1,0 +1,17 @@
+/*
+Queried a list of all employee names from the "Employee" table in alphabetical order.
+*/
+
+SELECT name FROM Employee
+ORDER BY name ASC;
+
+/*
+Queried a list of names from the "Employee" table where their salary per month was greater than $2,000
+while being employed for less than three months, outputs are order by their employee id in ascending order.
+*/
+
+SELECT name from Employee
+WHERE salary > 2000
+AND months < 10
+ORDER BY employee_id ASC;
+
